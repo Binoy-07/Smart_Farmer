@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name:',255);
             $table->string('email:',255);
             $table->string('pass:',255);
-            $table->string('id',10);
+            $table->string('roll',15);
             $table->timestamps();
         });
     }
