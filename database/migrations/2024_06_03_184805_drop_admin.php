@@ -11,14 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('_admin', function (Blueprint $table) {
-            $table->id();
-            $table->string('name:',255);
-            $table->string('email:',255);
-            $table->string('pass:',255);
-
-            $table->timestamps();
-        });
+        Schema::dropIfExists('admin');
     }
 
     /**
@@ -26,6 +19,12 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('_admin');
+        Schema::create('admin', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('email');
+            $table->string('password');
+            $table->timestamps();
+        });
     }
 };
